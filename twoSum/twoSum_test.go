@@ -6,13 +6,21 @@ import (
 )
 
 func TestTwoSum(t *testing.T) {
-  input  := []int{2,7,11,15}
-  var target int = 9
-  expected  := []int{0,1}
-  output := TwoSum(input, target )
-  if !reflect.DeepEqual(expected, output) {
-    t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v",expected,output)
-    
+  var simulations = []struct{
+    input []int
+    target int
+    espected []int
+  }{
+      {[]int{2,7,11,15},9,[]int{0,1}},
+      {[]int{3,2,4},6,[]int{1,2}},
+      {[]int{3,3},6,[]int{0,1}},
+    }
+  for _,s :=range simulations{
+    output := TwoSum(s.input, s.target )
+    if !reflect.DeepEqual(s.espected, output) {
+      t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v",s.espected,output)
+    }
+
   }
   
 }
