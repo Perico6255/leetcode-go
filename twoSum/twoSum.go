@@ -5,12 +5,9 @@ func TwoSum(nums []int, target int) []int {
 	var search int
 	for i, v := range nums {
 		search = target - v
-
-		if search > 0 {
-			for j := i + 1; j < len(nums); j++ {
-				if nums[j] == search {
-					return []int{i, j}
-				}
+		for j := i + 1; j < len(nums); j++ {
+			if nums[j] == search {
+				return []int{i, j}
 			}
 		}
 	}
