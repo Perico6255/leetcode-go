@@ -1,4 +1,3 @@
-
 package addtwonumbers
 
 /*
@@ -16,4 +15,15 @@ type ListNode struct {
 func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	return l1
+}
+func NodeToInt(l *ListNode)*int{
+  var n int
+  for i := 1; true; i *= 10 {
+    n = n + l.Val * i
+    if l.Next == nil {
+      return &n
+    }
+    l = l.Next
+  }
+  return &n
 }
