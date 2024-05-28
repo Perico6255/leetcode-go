@@ -21,7 +21,7 @@ func TestAddTwoNumbers(t *testing.T) {
 		t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 7, output.Val)
 	}
 }
-func TestNodeToList(t *testing.T) {
+func TestNodeToInt(t *testing.T) {
 	n3 := &ListNode{Val: 3}
 	n2 := &ListNode{Val: 4, Next: n3}
 	n1 := &ListNode{Val: 2, Next: n2}
@@ -38,4 +38,16 @@ func TestNodeToList(t *testing.T) {
   if *output2 != 564 {
 		t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 564, *output2)
 	}
+}
+func TestIntToNode(t *testing.T) {
+  l := IntToNode(123)
+  fmt.Println(l.Val)
+
+	output := NodeToInt(l) 	
+
+  if *output != 123 {
+		t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 123, *output)
+	}
+
+  
 }
