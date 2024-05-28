@@ -5,21 +5,21 @@ import (
 	"testing"
 )
 func TestAddTwoNumbers(t *testing.T) {
-  var simulations = []struct{
-    l1, l2, espected ListNode
-  }{
-    }
-  for _,s :=range simulations{
-    // output := TwoSum(s.input, s.target )
-    // if !reflect.DeepEqual(s.espected, output) {
-    //   t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v",s.espected,output)
-    // }
-    output := AddTwoNumbers(&s.l1, &s.l2)
-    if !reflect.DeepEqual(s.espected, output) {
-      t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v",s.espected,output)
-    }
+  n3 := &ListNode{Val:2}
+  n2 := &ListNode{Val:4, Next: n3}
+  n1 := &ListNode{Val:3, Next: n2}
+  nl3 := &ListNode{Val:4}
+  nl2 := &ListNode{Val:6, Next: nl3}
+  nl1 := &ListNode{Val:5, Next: nl2}
 
+  output:= AddTwoNumbers(n1, nl1)
+  
+
+  if !reflect.DeepEqual(7,&output.Val ) {
+    t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 7,&output.Val)
   }
+
+
   
 }
 

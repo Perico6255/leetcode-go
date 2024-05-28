@@ -10,7 +10,7 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 // Definition for single-linked list
 type ListNode struct {
 	Val  int
-	Nest *ListNode
+	Next *ListNode
 }
 
 func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
