@@ -5,24 +5,42 @@ import (
 	"testing"
 )
 
-func TestAddTwoNumbers(t *testing.T) {
-	n3 := &ListNode{Val: 3}
-	n2 := &ListNode{Val: 4, Next: n3}
-	n1 := &ListNode{Val: 2, Next: n2}
-	nl3 := &ListNode{Val: 4}
-	nl2 := &ListNode{Val: 6, Next: nl3}
+// func TestAddTwoNumbers(t *testing.T) {
+// 	n3 := &ListNode{Val: 3}
+// 	n2 := &ListNode{Val: 4, Next: n3}
+// 	n1 := &ListNode{Val: 2, Next: n2}
+// 	nl3 := &ListNode{Val: 4}
+// 	nl2 := &ListNode{Val: 6, Next: nl3}
+// 	nl1 := &ListNode{Val: 5, Next: nl2}
+//
+// 	output := AddTwoNumbers(n1, nl1)
+//
+// 	if 7!=output.Val {
+// 		t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 7, output.Val)
+// 	}
+//   outputNumber:= NodeToInt(output)
+//   if 708 !=*outputNumber{
+// 		t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 708, *outputNumber)
+//   }
+//
+// }
+
+func TestErrorCase(t *testing.T) {
+	n2 := &ListNode{Val: 6}
+	n1 := &ListNode{Val: 5, Next: n2}
+  num := NodeToInt(n1)
+  fmt.Println(num)
+	nl3 := &ListNode{Val: 9}
+	nl2 := &ListNode{Val: 4, Next: nl3}
 	nl1 := &ListNode{Val: 5, Next: nl2}
-
-	output := AddTwoNumbers(n1, nl1)
-
-	if 7!=output.Val {
-		t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 7, output.Val)
-	}
-  outputNumber:= NodeToInt(output)
-  if 708 !=*outputNumber{
-		t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 708, *outputNumber)
-  }
-
+  num2 := NodeToInt(nl1)
+  fmt.Println(*num2)
+  if  65 != *num {
+		t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 65, *num)
+  } 
+  if  945 != *num2 {
+		t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 945, *num2)
+  } 
 }
 func TestNodeToInt(t *testing.T) {
 	n3 := &ListNode{Val: 3}

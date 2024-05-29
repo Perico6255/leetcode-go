@@ -30,6 +30,8 @@ func NodeToInt(l *ListNode) *int {
 }
 func IntToNode(n int) *ListNode {
 	var l *ListNode
+	l = &ListNode{Val: n % 10, Next: l}
+	n /= 10
 	for ; n > 0; n /= 10 {
 		l = &ListNode{Val: n % 10, Next: l}
 	}
