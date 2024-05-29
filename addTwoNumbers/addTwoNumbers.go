@@ -1,7 +1,5 @@
 package addtwonumbers
 
-import "fmt"
-
 /*
 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 
@@ -15,27 +13,42 @@ type ListNode struct {
 }
 
 func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-
-	return l1
+	n1 := NodeToInt(l1)
+	n2 := NodeToInt(l2)
+	return IntToNode(*func() *int {
+		var n int = *n1 + *n2
+		reversed := 0
+		for n > 0 {
+			reversed = reversed*10 + n%10
+			n /= 10
+		}
+		return &reversed
+	}())
 }
-func NodeToInt(l *ListNode)*int{
-  var n int
-  for i := 1; true; i *= 10 {
-    n = n + l.Val * i
-    if l.Next == nil {
-      return &n
-    }
-    l = l.Next
-  }
-  return &n
+func NodeToInt(l *ListNode) *int {
+	var n int
+	for i := 1; true; i *= 10 {
+		n = n + l.Val*i
+		if l.Next == nil {
+			return &n
+		}
+		l = l.Next
+	}
+	return &n
 }
 func IntToNode(n int) *ListNode {
-  l := &ListNode{}
-  fmt.Println(l)
-  for ; n >0 ; n/=10 {
-    l.Val = n%10
-  }
-  
-  return l
-  
+	l := &ListNode{}
+	for ; n > 0; n /= 10 {
+		l = &ListNode{Val: n % 10, Next: l}
+	}
+	return l
+}
+func ReverseInt(n int) *int {
+	reversed := 0
+
+	for n > 0 {
+		reversed = reversed*10 + n%10
+		n /= 10
+	}
+	return &reversed
 }
