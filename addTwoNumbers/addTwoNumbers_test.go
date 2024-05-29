@@ -18,6 +18,11 @@ func TestAddTwoNumbers(t *testing.T) {
 	if 7!=output.Val {
 		t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 7, output.Val)
 	}
+  outputNumber:= NodeToInt(output)
+  if 708 !=*outputNumber{
+		t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 708, *outputNumber)
+  }
+
 }
 func TestNodeToInt(t *testing.T) {
 	n3 := &ListNode{Val: 3}

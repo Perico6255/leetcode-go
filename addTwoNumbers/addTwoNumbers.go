@@ -15,15 +15,7 @@ type ListNode struct {
 func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	n1 := NodeToInt(l1)
 	n2 := NodeToInt(l2)
-	return IntToNode(*func() *int {
-		var n int = *n1 + *n2
-		reversed := 0
-		for n > 0 {
-			reversed = reversed*10 + n%10
-			n /= 10
-		}
-		return &reversed
-	}())
+	return IntToNode(*ReverseInt(*n1 + *n2))
 }
 func NodeToInt(l *ListNode) *int {
 	var n int
@@ -37,7 +29,7 @@ func NodeToInt(l *ListNode) *int {
 	return &n
 }
 func IntToNode(n int) *ListNode {
-	l := &ListNode{}
+	var l *ListNode
 	for ; n > 0; n /= 10 {
 		l = &ListNode{Val: n % 10, Next: l}
 	}
