@@ -41,7 +41,12 @@ func TestErrorCase(t *testing.T) {
   if  945 != *num2 {
 		t.Errorf("Error, \n EXPECTED %v \n OUTPUT %v", 945, *num2)
   } 
+  numFinal := *num + *num2
+  fmt.Println(numFinal)
 }
+
+// TODO: the error is if the number end with 0, when we turn the number around we have problems with "0"
+
 func TestNodeToInt(t *testing.T) {
 	n3 := &ListNode{Val: 3}
 	n2 := &ListNode{Val: 4, Next: n3}
