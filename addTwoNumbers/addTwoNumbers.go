@@ -1,5 +1,7 @@
 package addtwonumbers
 
+import "fmt"
+
 /*
 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 
@@ -45,4 +47,15 @@ func ReverseInt(n int) *int {
 		n /= 10
 	}
 	return &reversed
+}
+func IntToNodeReversed(n int) *ListNode {
+  l1 := &ListNode{}
+  l2 := &l1
+  fmt.Println(l1)
+  fmt.Println(l2)
+	for ; n > 0; n /= 10 {
+    l1 = &ListNode{Val: n, Next: *l2}
+    l2 = &l1
+	}
+	return l1
 }
